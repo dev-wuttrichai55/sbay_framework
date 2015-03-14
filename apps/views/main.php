@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <?php
-        
             foreach ($this->getCssFile as $cssFile) {
                 echo '<link rel="stylesheet" type="text/css" href="' . $this->baseUrl . '/' . $this->baseCssPath . '/' . $cssFile . '?v=' . $this->version . '">';
             }
