@@ -153,7 +153,6 @@ class CComponent {
     
     // get url
     public function createUrl($url = ''){
-        print_r($this);
         return $this->baseUrl . '/' . $url;
     }
     protected function getCssUrl(){
