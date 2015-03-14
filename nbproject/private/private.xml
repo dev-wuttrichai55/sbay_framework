@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Book - Laravel Book V.1">
-            <file>file:/D:/xampp/htdocs/sbay_framework/index.php</file>
+            <file>file:/D:/xampp/htdocs/sbay_framework/apps/views/index.php</file>
+            <file>file:/D:/xampp/htdocs/sbay_framework/public/assets/css/style.css</file>
+            <file>file:/D:/xampp/htdocs/sbay_framework/include/framework/Sbay.php</file>
+            <file>file:/D:/xampp/htdocs/sbay_framework/include/framework/templade/View.php</file>
         </group>
     </open-files>
 </project-private>

@@ -1,10 +1,10 @@
 <?php
- 
+
 return array(
     
-    'version'       => '1.1',
-    'name'          => 'Custom PHP Framework',
-    'description'   => 'PHP Framework by DriveSoftCenter.Net',
+    'version'       => '0.0.2',
+    'name'          => 'Sbay PHP Framework',
+    'description'   => 'Mini PHP Framework by DriveSoftCenter.Net',
     'author'        => 'Eakkabin Jaikeawma',
     'icon'          => 'stylesheet/img/devil-icon.png',    
     
@@ -36,6 +36,4 @@ return array(
         'script.js'
     ),
     
-    
 );
-
