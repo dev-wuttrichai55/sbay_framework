@@ -9,4 +9,8 @@ class HomeController extends Controller {
         $this->render('index');
     }
     
+    public function actionError(){
+        $this->render('error');
+    }
+    
 }

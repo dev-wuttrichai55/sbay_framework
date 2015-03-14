@@ -23,22 +23,33 @@ class Application extends BaseMain {
     }
     public function setRoute($url){
         $objRoute           = new Route($url);
-        $this->route        = (object) $objRoute->route;
-        $this->controller   = $this->route->controller;
-        $this->action       = $this->route->action;
-        $this->params       = $this->route->params;
+//        $this->route        = (object) $objRoute->route;
+        $this->controller   = $objRoute->controller;
+        $this->action       = $objRoute->action;
+        $this->params       = $objRoute->params;
     }
     public function registerController(){
-        $classController = 'Sbay\Controller\\' . ucfirst($this->controller) . 'Controller';     // HomeController
-        $methodAction = 'action' . ucfirst($this->action);                                      // actionIndex
-        $objectController = new $classController();                                             // new HomeController();
-        if(is_a($objectController,$classController)){
-            if(method_exists($objectController, $methodAction)){
-                $objectController->view($this->controller,$this->action,$this);
-                $objectController->$methodAction();                                             // actionIndex
+        $path = ROOT_PATH . '/apps/controllers/' . ucfirst($this->controller) . 'Controller.php';   // HomeController.php
+        if(is_file($path)){
+            $classController = 'Sbay\Controller\\' . ucfirst($this->controller) . 'Controller';         // HomeController
+            $methodAction = 'action' . ucfirst($this->action);                                          // actionIndex
+            $objectController = new $classController();                                                 // new HomeController();
+            if(is_a($objectController,$classController)){
+                if(method_exists($objectController, $methodAction)){
+                    $objectController->view($this->controller,$this->action,$this);
+                        $objectController->$methodAction();                                             // actionIndex
+                } else {
+                    $objectController->view($this->controller,$this->action,$this);
+                    $objectController->getPageError('ไม่พบ Action ที่ต้องการ');
+                }
             } else {
-                $objectController->getPageError('ไม่พบ Action ที่ต้องการ');
+                $objectController->view($this->controller,$this->action,$this);
+                $objectController->getPageError('ไม่พบ Controller ที่ต้องการ');
             }
+        } else {
+            $objectController = new \Sbay\Controller\HomeController(); 
+            $objectController->view($this->controller,$this->action,$this);
+            $objectController->getPageError('ไม่พบ Controller ที่ต้องการ');
         }
     }
     

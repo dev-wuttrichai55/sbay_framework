@@ -12,6 +12,7 @@ class View extends BaseView {
     }
     public function setAttributes($application = array()){
 //         $this->application      = $application;
+        
         $this->version          = $application->config->version;
         $this->database         = $application->config->database;
         $this->pageName         = 'Home';

@@ -7,6 +7,8 @@ class Main {
     public $application;
     public $version         = '';
     
+    public $url;
+    public $route           = array();
     public $config          = array();
     public $database        = array();
     
@@ -17,7 +19,5 @@ class Main {
     public $params          = array();
     
     public $content         = '';
-     
-    public $route           = array();
     
 }

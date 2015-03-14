@@ -1,30 +1,23 @@
 <?php
 
 namespace Sbay\Base;
+use Sbay\Main as BaseMain;
 
-class CRoute {
+class CRoute extends BaseMain {
     
-    public $url;
-    
-    public $defaultController   = 'home';
-    public $defaultAction       = 'index';
+    public $controller  = 'home';
+    public $action      = 'index';
+    public $params      = array();
     
     public function __construct($url) {
+        
         if(!empty($url)){
-            if(!empty($this->url)){
-                $this->route = array(
-                    'controller'    => !empty($this->url[1]) ? $this->url[1] : $this->defaultController,
-                    'action'        => !empty($this->url[2]) ? $this->url[2] : $this->defaultAction,
-                    'params'        => !empty($this->url[3]) ? $this->url[3] : array(),
-                );
-            }
+            $this->url = explode('/', $url);
+            $this->controller   = !empty($this->url[1]) ? $this->url[1] : $this->controller;     
+            $this->action       = !empty($this->url[2]) ? $this->url[2] : $this->action;   
+            $this->params       = !empty($this->url[3]) ? $this->url[3] : $this->params;   
         }else{
             $this->url = '/';
-            $this->route = array(
-                'controller'    => $this->defaultController,
-                'action'        => $this->defaultAction,
-                'params'        => array(),
-            );
         }
     }
     
