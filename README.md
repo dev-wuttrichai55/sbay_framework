@@ -44,3 +44,7 @@ System
     themes			| เก็บไฟล์เกี่ยวกับ Themes ทั้งหมด
     .htaccess			| ไฟล์เกี่ยวกับจัดการ URL
     index.php			| ไฟล์ Run Web Application
+
+# Install
+    1. Download File Sbay Framework 
+    2. Create Folder "sbay_framework" at Web Server
