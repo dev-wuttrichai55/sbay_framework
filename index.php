@@ -10,6 +10,5 @@ include_once ROOT_PATH . '/include/framework/Autoload.php';
 include_once ROOT_PATH . '/include/framework/Sbay.php';
 $config = include ROOT_PATH . '/apps/config/main.php';
 
-$url = !empty($_GET['_url'])? $_GET['_url'] : null;
 $application = new Sbay\Application($config);
-$application->createWebApplication($url);
+$application->createWebApplication();

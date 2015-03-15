@@ -5,7 +5,6 @@ namespace Sbay;
 use Sbay\Loader\Autoload as Autoload;
 use Sbay\Base\CConfig as Config;
 use Sbay\Main as BaseMain;
-use Sbay\Base\CRoute as Route;
 
 include_once ROOT_PATH . '/include/framework/Main.php';
 
@@ -16,13 +15,14 @@ class Application extends BaseMain {
         new Autoload($loader);
         $objConfig = new Config($config);
         $this->config = $objConfig->config;
+        $this->setRoute();
     }
-    public function createWebApplication($url){
-        $this->setRoute($url);
+    public function createWebApplication(){
         $this->registerController();
     }
-    public function setRoute($url){
-        $objRoute           = new Route($url);
+    public function setRoute(){
+        $url                = !empty($_GET['_url'])? $_GET['_url'] : null;
+        $objRoute           = new \Sbay\Base\CRoute($url);
         $this->controller   = $objRoute->controller;
         $this->action       = $objRoute->action;
         $this->params       = $objRoute->params;
@@ -32,7 +32,7 @@ class Application extends BaseMain {
         $actionName     = 'action' . ucfirst($this->action);
         $path = ROOT_PATH . '/apps/controllers/' . $controllerName . '.php';   // HomeController.php
         if(is_file($path)){
-            $classController = 'Sbay\Controller\\' . $controllerName;         // HomeController
+            $classController = 'Application\Controller\\' . $controllerName;         // HomeController
             $methodAction = $actionName;                                          // actionIndex
             $objectController = new $classController();                                                 // new HomeController();
             if(is_a($objectController,$classController)){
@@ -55,7 +55,7 @@ class Application extends BaseMain {
             $objController->view($this->controller,$this->action,$this);
             $objController->getPageError($text);
         }else{
-            $objectController = new \Sbay\Controller\HomeController(); 
+            $objectController = new \Application\Controller\HomeController(); 
             $objectController->view($this->controller,$this->action,$this);
             $objectController->getPageError($text);
         }
