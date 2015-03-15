@@ -9,9 +9,8 @@ class Autoload {
     public function __construct($loader) {
         $this->loader = $loader;
         $loadFramework = array(
-            __DIR__ . '/config',
-            __DIR__ . '/base',
-            __DIR__ . '/template',
+            __DIR__ . '/System',
+            __DIR__ . '/Template',
         );
         foreach ($loadFramework as $dir) {
             if (is_dir($dir)) {

@@ -1,7 +1,7 @@
 <?php
 
 namespace Sbay\Template;
-use Sbay\Base\CView as BaseView;
+use Sbay\System\CView as BaseView;
 
 class View extends BaseView {
     

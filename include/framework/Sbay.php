@@ -3,7 +3,7 @@
 namespace Sbay;
 
 use Sbay\Loader\Autoload as Autoload;
-use Sbay\Base\CConfig as Config;
+use Sbay\System\CConfig as Config;
 use Sbay\Main as BaseMain;
 
 include_once ROOT_PATH . '/include/framework/Main.php';
@@ -22,7 +22,7 @@ class Application extends BaseMain {
     }
     public function setRoute(){
         $url                = !empty($_GET['_url'])? $_GET['_url'] : null;
-        $objRoute           = new \Sbay\Base\CRoute($url);
+        $objRoute           = new \Sbay\System\CRoute($url);
         $this->controller   = $objRoute->controller;
         $this->action       = $objRoute->action;
         $this->params       = $objRoute->params;
