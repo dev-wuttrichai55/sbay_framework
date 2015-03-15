@@ -31,7 +31,7 @@ System
             index.php		| ไฟล์หน้าแรก (กรณี ไม่ได้สร้าง HomeController)
     include
         framework
-            System			| เก็บไฟล์เกี่ยวกับ Sbay Framework System ทั้งหมดเลยมด	
+            System			| เก็บไฟล์เกี่ยวกับ Sbay Framework System ทั้งหมด
         Autoload.php		| namespace Sbay\Autoload.php;		| ไฟล์จัดการ Autoload ไฟล์ของระบบทั้งหมด
         Main.php		| namespace Sbay\Main.php;		| ไฟล์จัดการ Class หลักของระบบ	
         Sbay.php		| namespace Sbay\Sbay;			| ไฟล์ควบคุม Sbay System ทั้งหมด
