@@ -48,4 +48,4 @@ System
 # Install
     1. Download File : Sbay Framework 
     2. Create Folder "sbay_framework" at Web Server
-    3. Run Browser to http://localhost/sbay_framework
+    3. Run Browser : http://localhost/sbay_framework
