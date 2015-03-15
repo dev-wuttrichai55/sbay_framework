@@ -1,7 +1,7 @@
 <?php
 
 namespace Application\Controller;
-use Sbay\Base\CController as Controller;
+use Sbay\System\CController as Controller;
 
 class HomeController extends Controller {
     
