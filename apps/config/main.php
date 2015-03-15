@@ -6,7 +6,6 @@ return array(
     'name'          => 'Sbay PHP Framework',
     'description'   => 'Mini PHP Framework by DriveSoftCenter.Net',
     'author'        => 'Eakkabin Jaikeawma',
-    'icon'          => 'stylesheet/img/devil-icon.png',    
     
     'baseUrl'       => 'http://localhost/sbay_framework',    
     

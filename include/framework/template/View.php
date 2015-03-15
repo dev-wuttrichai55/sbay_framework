@@ -19,7 +19,6 @@ class View extends BaseView {
         $this->pageTitle        = $application->config->name;
         $this->pageDescription  = $application->config->description;
         $this->pageAuthor       = $application->config->author;
-        $this->pageIcon         = $application->config->icon;
         $this->baseUrl          = $application->config->baseUrl;
         $this->baseCssPath      = $application->config->cssDir;
         $this->baseJsPath       = $application->config->jsDir;
