@@ -11,7 +11,7 @@ class Autoload {
         $loadFramework = array(
             __DIR__ . '/config',
             __DIR__ . '/base',
-            __DIR__ . '/templade',
+            __DIR__ . '/template',
         );
         foreach ($loadFramework as $dir) {
             if (is_dir($dir)) {
