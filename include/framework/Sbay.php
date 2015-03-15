@@ -23,33 +23,41 @@ class Application extends BaseMain {
     }
     public function setRoute($url){
         $objRoute           = new Route($url);
-//        $this->route        = (object) $objRoute->route;
         $this->controller   = $objRoute->controller;
         $this->action       = $objRoute->action;
         $this->params       = $objRoute->params;
     }
     public function registerController(){
-        $path = ROOT_PATH . '/apps/controllers/' . ucfirst($this->controller) . 'Controller.php';   // HomeController.php
+        $controllerName = ucfirst($this->controller) . 'Controller';
+        $actionName     = 'action' . ucfirst($this->action);
+        $path = ROOT_PATH . '/apps/controllers/' . $controllerName . '.php';   // HomeController.php
         if(is_file($path)){
-            $classController = 'Sbay\Controller\\' . ucfirst($this->controller) . 'Controller';         // HomeController
-            $methodAction = 'action' . ucfirst($this->action);                                          // actionIndex
+            $classController = 'Sbay\Controller\\' . $controllerName;         // HomeController
+            $methodAction = $actionName;                                          // actionIndex
             $objectController = new $classController();                                                 // new HomeController();
             if(is_a($objectController,$classController)){
-                if(method_exists($objectController, $methodAction)){
+                if(method_exists($objectController, $actionName)){
                     $objectController->view($this->controller,$this->action,$this);
-                        $objectController->$methodAction();                                             // actionIndex
+                    $objectController->$methodAction();                                             // actionIndex
                 } else {
-                    $objectController->view($this->controller,$this->action,$this);
-                    $objectController->getPageError('ไม่พบ Action ที่ต้องการ');
+                    $this->getPageError('Method Action | Not Found',$objectController);
                 }
             } else {
-                $objectController->view($this->controller,$this->action,$this);
-                $objectController->getPageError('ไม่พบ Controller ที่ต้องการ');
+                $this->getPageError('Controller | Not Found',$objectController);
             }
         } else {
+            $this->getPageError('Controller | Not Found');
+        }
+    }
+    
+    private function getPageError($text = '',$objController = null){
+        if(is_object($objController)){
+            $objController->view($this->controller,$this->action,$this);
+            $objController->getPageError($text);
+        }else{
             $objectController = new \Sbay\Controller\HomeController(); 
             $objectController->view($this->controller,$this->action,$this);
-            $objectController->getPageError('ไม่พบ Controller ที่ต้องการ');
+            $objectController->getPageError($text);
         }
     }
     
