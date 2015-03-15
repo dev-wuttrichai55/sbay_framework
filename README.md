@@ -3,9 +3,9 @@ Mini PHP Framework by DriveSoftCenter.Net
 
 # Requirements
 System : 
-    PHP 5.4 + 
-    MySQL , PDO MySQL
-    Mod rewrite (.htaccess)
+        PHP 5.4 + 
+        MySQL , PDO MySQL
+        Mod rewrite (.htaccess)
 
 # Note
 -- array() to []
