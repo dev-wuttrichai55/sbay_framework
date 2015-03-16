@@ -50,7 +50,7 @@ System
     .htaccess			| ไฟล์เกี่ยวกับจัดการ URL
     index.php			| ไฟล์ Run Web Application
 
-# Web Developer Team 
+# Developer Teams
 
     Max Eakkabin Jaikeawma (Facebook) | Back-End
     Thapwaris Chinsirirathkul (Facebook) | Front-End
