@@ -52,8 +52,8 @@ System
 
 # Developer Teams
 
-    Max Eakkabin Jaikeawma (Facebook) | Back-End
-    Thapwaris Chinsirirathkul (Facebook) | Front-End
-    Likhit Yossrimuang (Facebook) | Back-End
-    Wuttrichai Jaidee (Facebook) | Back-End
-    ปลาทู อร่อย (Facebook) | Back-End
+    Max Eakkabin Jaikeawma (Facebook)       | Back-End
+    Thapwaris Chinsirirathkul (Facebook)    | Front-End
+    Likhit Yossrimuang (Facebook)           | Back-End
+    Wuttrichai Jaidee (Facebook)            | Back-End
+    ปลาทู อร่อย (Facebook)                    | Back-End
