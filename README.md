@@ -1,14 +1,14 @@
 # Thai Sbay (สบาย) PHP Framework 0.0.2 (beta)
 Mini PHP Framework by DriveSoftCenter.Net
 
-# Requirements (ความต้องการของระบบ)
+# Requirements
 System
 
     PHP 5.4 + 
     MySQL , PDO MySQL
     Mod rewrite (.htaccess)
 
-# Install (วิธีการติดตั้ง)
+# Install
     1. Download File : Sbay Framework 
     2. Create Folder "sbay_framework" at Web Server
     3. Run Browser : http://localhost/sbay_framework
@@ -16,7 +16,7 @@ System
 # Note 
 -- array() to []
 
-# Structure (โครงสร้าง)
+# Structure
 
     apps 			
         components 		| namespace Application\Components;
